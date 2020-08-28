@@ -1,15 +1,13 @@
 import React from 'react';
 
-import Card from '../../components/Card';
-
 import { Container } from './styles';
 
-const Dashboard: React.FC = () => {
+const Card: React.FC = () => {
   return (
     <Container>
-      <Card />
+      <h1>Dark Mode is Disabled</h1>
     </Container>
   );
 };
 
-export default Dashboard;
+export default Card;
