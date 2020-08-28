@@ -4,10 +4,18 @@ import Card from '../../components/Card';
 
 import { Container } from './styles';
 
-const Dashboard: React.FC = () => {
+interface IDashboardProps {
+  isDarkMode: boolean;
+  onDarkMode(): void;
+}
+
+const Dashboard: React.FC<IDashboardProps> = ({
+  isDarkMode,
+  onDarkMode,
+}: IDashboardProps) => {
   return (
     <Container>
-      <Card />
+      <Card isDarkMode={isDarkMode} onDarkMode={onDarkMode} />
     </Container>
   );
 };
