@@ -4,12 +4,17 @@ import Button from '../Button';
 
 import { Container } from './styles';
 
-const Card: React.FC = () => {
+interface ICardProps {
+  isDarkMode: boolean;
+  onDarkMode(): void;
+}
+
+const Card: React.FC<ICardProps> = ({ isDarkMode, onDarkMode }: ICardProps) => {
   return (
     <Container>
-      <h1>Dark Mode is Disabled</h1>
-      <Button type="button" onClick={() => {}}>
-        Toggle Dark Mode
+      <h1>Dark Mode is {isDarkMode ? 'Enabled' : 'Disabled'}</h1>
+      <Button type="button" onClick={onDarkMode}>
+        Toggle {isDarkMode ? 'Light' : 'Dark'} Mode
       </Button>
     </Container>
   );
